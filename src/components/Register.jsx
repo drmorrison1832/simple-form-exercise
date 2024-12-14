@@ -33,8 +33,9 @@ const Register = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(event.defaultPrevented);
-    setEditStatus(false);
-    alert("sent");
+    return password !== confirmPassword
+      ? alert("Vos deux mots de passe ne sont pas identiques")
+      : setEditStatus(false);
   };
 
   return (

@@ -33,7 +33,15 @@ const App = () => {
             }}
           />
         ) : (
-          <Edit edit={edit} />
+          <Edit
+            edit={edit}
+            variablesGlobal={{
+              nameGlobal,
+              emailGlobal,
+              passwordGlobal,
+              confirmPasswordGlobal,
+            }}
+          />
         )}
       </div>
     </main>
