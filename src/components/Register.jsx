@@ -31,7 +31,9 @@ const Register = (props) => {
   };
 
   const handleSubmit = (event) => {
-    event.prefentDefault();
+    event.preventDefault();
+    console.log(event.defaultPrevented);
+    setEditStatus(false);
     alert("sent");
   };
 
@@ -83,11 +85,7 @@ const Register = (props) => {
           onChange={handleChange}
         />
 
-        <button
-          onClick={() => {
-            setEditStatus(false);
-          }}
-        >
+        <button type="submit" onClick={handleSubmit}>
           Register
         </button>
       </form>
